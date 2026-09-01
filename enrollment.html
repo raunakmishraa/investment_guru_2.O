@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Enroll | Investment Guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header" id="header">
+        <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Investment Guru home">
+            <img src="https://www.investmentguru.com.np/logo.jpg" alt="Investment Guru logo">
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="about.html">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="consultation.html" class="nav-cta">Free Consultation <span>↗</span></a>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top:180px">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <div class="eyebrow dark">COURSE ENROLLMENT</div>
+                    <h1 style="font:800 clamp(48px,6vw,78px)/1 var(--font-head);letter-spacing:-.06em;margin:0 0 25px">
+                        Choose your<br><em style="font-style:normal;color:#087a46">learning path.</em></h1>
+                    <p>Join Investment Guru's expert-led courses and build practical skills to navigate the stock market
+                        with confidence.</p>
+                    <div class="course-grid" style="grid-template-columns:1fr;margin-top:35px">
+                        <div class="course-card featured">
+                            <div class="course-tag">POPULAR</div>
+                            <h3>Stock Market 101</h3>
+                            <p>8 weeks • NRs. 3,000</p>
+                            <ul>
+                                <li>Market fundamentals</li>
+                                <li>Risk assessment</li>
+                                <li>Portfolio basics</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="enrollForm">
+                    <div class="form-title"><span>ENROLL</span>
+                        <div>
+                            <h3>Initiate your enrollment</h3>
+                            <p>One-time payment • Non-refundable after 7 days.</p>
+                        </div>
+                    </div>
+                    <div class="form-row"><label>First Name *<input required name="first"
+                                placeholder="Your first name"></label><label>Last Name *<input required name="last"
+                                placeholder="Your last name"></label></div><label>Email Address *<input required
+                            type="email" name="email" placeholder="your.email@example.com"></label><label>Phone Number
+                        *<input required name="phone" placeholder="+977-9841234567"></label><label>Select Course
+                        *<select required name="course"
+                            style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                            <option>Stock Market 101 — NRs. 3,000</option>
+                            <option>Advance Course: Technical Analysis Mastery — NRs. 5,000</option>
+                            <option>Basic to Advance Course — NRs. 10,000</option>
+                            <option>Pro Trader — NRs. 12,000</option>
+                            <option>From Loss to Profit — NRs. 15,000</option>
+                        </select></label><label style="display:flex;gap:9px;align-items:flex-start"><input required
+                            type="checkbox" style="width:auto;margin:2px 0"> I agree to the Terms of Service and Privacy
+                        Policy and understand the course purchase policy.</label><button
+                        class="btn btn-primary full">Enroll Now <span>↗</span></button>
+                    <p class="form-status" id="enrollStatus"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+    
+    <footer class="footer">
+        <div class="container footer-top">
+        <div class="footer-brand"><img src="https://www.investmentguru.com.np/logo.jpg" alt="Investment Guru logo"><p>Because every investor needs a guru.</p></div>
+        <div><h4>Company</h4><a href="#courses">Courses</a><a href="about.html">About Us</a><a href="consultation.html">Schedule a Call</a><a href="enrollment.html">Enroll Now</a><a href="#contact">Contact Us</a></div>
+        <div><h4>Services</h4><a href="#services">Market Analysis</a><a href="#services">Training</a><a href="#services">Consultations</a><a href="#services">Strategy Planning</a></div>
+        <div><h4>Contact</h4><a href="tel:+97715313800">01-5313800</a><a href="tel:+9779767473560">9767473560</a><a href="mailto:investmentguruofficial@gmail.com">investmentguruofficial@gmail.com</a><p>Kathmandu, Nepal</p></div>
+        </div>
+        <div class="container footer-bottom"><span>© 2026 Investment Guru. All rights reserved.</span><span>Investing involves risk. Make informed decisions.</span></div>
+    </footer>
+
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(function () { $('#enrollForm').on('submit', function (e) { e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries()); const subject = 'Course Enrollment - ' + d.course; const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ACourse: ${d.course}`; window.location.href = `mailto:investmentguruofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`; $('#enrollStatus').text('Your email client has been opened with the enrollment request.'); }); });
+    </script>
+</body>
+
+</html>

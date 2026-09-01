@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <title>Free Consultation | Investment Guru</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@600;700;800&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+    <header class="site-header" id="header">
+        <div class="container nav-wrap">
+        <a href="index.html" class="brand" aria-label="Investment Guru home">
+            <img src="https://www.investmentguru.com.np/logo.jpg" alt="Investment Guru logo">
+        </a>
+        <button class="menu-toggle" aria-label="Open menu" aria-expanded="false"><span></span><span></span><span></span></button>
+        <nav class="main-nav">
+            <a href="index.html">Home</a>
+            <a href="courses.html">Courses</a>
+            <a href="about.html">About</a>
+            <a href="index.html#services">Services</a>
+            <a href="contact.html">Contact</a>
+            <a href="consultation.html" class="nav-cta">Free Consultation <span>↗</span></a>
+        </nav>
+        </div>
+    </header>
+
+    <main>
+        <section class="section" style="padding-top:180px">
+            <div class="container contact-grid">
+                <div class="contact-copy">
+                    <div class="eyebrow dark">FREE CONSULTATION</div>
+                    <h1 style="font:800 clamp(48px,6vw,78px)/1 var(--font-head);letter-spacing:-.06em;margin:0 0 25px">
+                        Start with a<br><em style="font-style:normal;color:#087a46">conversation.</em></h1>
+                    <p>Take the first step towards your financial success. Book a complimentary consultation with our
+                        expert investment advisors and discover personalized strategies for your goals.</p>
+                    <div class="process-grid" style="margin-top:35px;grid-template-columns:1fr">
+                        <div class="process-item"><b>01</b>
+                            <h3 style="margin-top:18px">Personalized Strategy</h3>
+                            <p>Tailored investment planning for your goals.</p>
+                        </div>
+                        <div class="process-item"><b>02</b>
+                            <h3 style="margin-top:18px">Expert Guidance</h3>
+                            <p>5+ years of investment experience.</p>
+                        </div>
+                        <div class="process-item"><b>03</b>
+                            <h3 style="margin-top:18px">No Obligation</h3>
+                            <p>Completely free with no strings attached.</p>
+                        </div>
+                    </div>
+                </div>
+                <form class="contact-form" id="consultForm">
+                    <div class="form-title"><span>BOOK</span>
+                        <div>
+                            <h3>Schedule your consultation</h3>
+                            <p>Fill out the form and we'll contact you.</p>
+                        </div>
+                    </div>
+                    <div class="form-row"><label>First Name *<input required name="first"
+                                placeholder="Your first name"></label><label>Last Name *<input required name="last"
+                                placeholder="Your last name"></label></div><label>Email Address *<input required
+                            type="email" name="email" placeholder="your.email@example.com"></label><label>Phone Number
+                        *<input required name="phone" placeholder="+977-9841234567"></label>
+                    <div class="form-row"><label>Preferred Date *<input required type="date"
+                                name="date"></label><label>Preferred Time<select name="time"
+                                style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                                <option>10:00 AM</option>
+                                <option>12:00 PM</option>
+                                <option>2:00 PM</option>
+                                <option>4:00 PM</option>
+                                <option>6:00 PM</option>
+                            </select></label></div><label>Consultation Type<select name="type"
+                            style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                            <option>Investment Planning</option>
+                            <option>Stock Market Guidance</option>
+                            <option>Portfolio Strategy</option>
+                            <option>Trading Strategy</option>
+                        </select></label><label>Additional Message<textarea name="message" rows="5"
+                            placeholder="Tell us about your goals..."></textarea></label><button
+                        class="btn btn-primary full">Schedule Free Consultation <span>↗</span></button>
+                    <p class="form-status" id="consultStatus"></p>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container footer-top">
+        <div class="footer-brand"><img src="https://www.investmentguru.com.np/logo.jpg" alt="Investment Guru logo"><p>Because every investor needs a guru.</p></div>
+        <div><h4>Company</h4><a href="#courses">Courses</a><a href="about.html">About Us</a><a href="consultation.html">Schedule a Call</a><a href="enrollment.html">Enroll Now</a><a href="#contact">Contact Us</a></div>
+        <div><h4>Services</h4><a href="#services">Market Analysis</a><a href="#services">Training</a><a href="#services">Consultations</a><a href="#services">Strategy Planning</a></div>
+        <div><h4>Contact</h4><a href="tel:+97715313800">01-5313800</a><a href="tel:+9779767473560">9767473560</a><a href="mailto:investmentguruofficial@gmail.com">investmentguruofficial@gmail.com</a><p>Kathmandu, Nepal</p></div>
+        </div>
+        <div class="container footer-bottom"><span>© 2026 Investment Guru. All rights reserved.</span><span>Investing involves risk. Make informed decisions.</span></div>
+    </footer>
+    
+    <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/main.js"></script>
+    <script>
+        $(function () { $('#consultForm').on('submit', function (e) { e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries()); const subject = 'Free Consultation Request - ' + d.first + ' ' + d.last; const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ADate: ${d.date}%0D%0ATime: ${d.time}%0D%0AType: ${d.type}%0D%0A%0D%0A${d.message || ''}`; window.location.href = `mailto:investmentguruofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`; $('#consultStatus').text('Your email client has been opened with the consultation request.'); }); });
+    </script>
+</body>
+
+</html>
