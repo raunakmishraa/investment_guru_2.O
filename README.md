@@ -32,3 +32,4 @@ The site uses the current Investment Guru logo hosted at investmentguru.com.np. 
 The forms are intentionally static-hosting friendly: they open the visitor's email client with a pre-filled message. Replace this with your preferred backend/API/form service when deploying.
 
 No investment performance claims beyond the existing site's supplied figures were invented; the existing 5+ years, 500+ clients and 25% portfolio-growth figures are retained from the current website.
+"# investment_guru_2.O" 
