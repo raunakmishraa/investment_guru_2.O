@@ -14,7 +14,7 @@ A framework-free redesign inspired by modern fintech/investment UX patterns, inc
 ## Pages
 - index.html
 - about.html
-- courses.html
+- trainings.html
 - enrollment.html
 - consultation.html
 - contact.html

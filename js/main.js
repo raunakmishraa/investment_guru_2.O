@@ -95,7 +95,7 @@ $(function () {
     });
     gsap.to('.float-card-a', { y: -10, duration: 2.2, repeat: -1, yoyo: true, ease: 'sine.inOut' });
     gsap.to('.float-card-b', { y: 10, duration: 2.7, repeat: -1, yoyo: true, ease: 'sine.inOut' });
-    gsap.utils.toArray('.course-card, .course-cta-card, .service-card').forEach(card => {
+    gsap.utils.toArray('.course-card, .training-card, .service-card').forEach(card => {
       gsap.fromTo(
         card,
         {

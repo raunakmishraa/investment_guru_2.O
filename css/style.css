@@ -107,7 +107,6 @@ textarea {
   transition: padding .35s ease, background-color .35s ease, backdrop-filter .35s ease, box-shadow .35s ease;
   width: 100%;
   max-width: 100vw;
-  /* color: #087a46; */
 }
 
 .site-header.scrolled {
@@ -116,7 +115,6 @@ textarea {
   -webkit-backdrop-filter: blur(16px);
   padding: 10px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
-  /* color: #ffffff */
 }
 
 .nav-wrap {
@@ -596,13 +594,15 @@ textarea {
   margin: 0 0 4px
 }
 
-.course-grid {
+.course-grid,
+.training-grid {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 18px
 }
 
-.course-card {
+.course-card,
+.training-card {
   grid-column: span 2;
   background: #fff;
   border: 1px solid var(--line);
@@ -616,28 +616,33 @@ textarea {
   overflow: hidden
 }
 
-.course-card:hover {
+.course-card:hover,
+.training-card:hover {
   transform: translateY(-8px);
   box-shadow: var(--shadow);
   border-color: #cbd8d1
 }
 
-.course-card.featured {
+.course-card.featured,
+.training-card.featured {
   background: #0b1a14;
   color: #fff;
   border-color: #0b1a14
 }
 
-.course-number {
+.course-number,
+.training-number {
   font: 800 13px var(--font-head);
   color: #9aa8a2
 }
 
-.course-card.featured .course-number {
+.course-card.featured .course-number,
+.training-card.featured .training-number {
   color: #59c995
 }
 
-.course-tag {
+.course-tag,
+.training-tag {
   font-size: 9px;
   letter-spacing: .15em;
   font-weight: 800;
@@ -645,27 +650,32 @@ textarea {
   margin: 25px 0 10px
 }
 
-.course-card.featured .course-tag {
+.course-card.featured .course-tag,
+.training-card.featured .training-tag {
   color: #38c98a
 }
 
-.course-card h3 {
+.course-card h3,
+.training-card h3 {
   font: 800 23px/1.15 var(--font-head);
   margin: 0 0 14px;
   letter-spacing: -.035em
 }
 
-.course-card p {
+.course-card p,
+.training-card p {
   font-size: 13px;
   color: #6e7b76;
   margin: 0 0 18px
 }
 
-.course-card.featured p {
+.course-card.featured p,
+.training-card.featured p {
   color: #9caea6
 }
 
-.course-card ul {
+.course-card ul,
+.training-card ul {
   list-style: none;
   padding: 0;
   margin: auto 0 20px;
@@ -674,14 +684,16 @@ textarea {
   font-size: 12px
 }
 
-.course-card li:before {
+.course-card li:before,
+.training-card li:before {
   content: "✓";
   color: #12a766;
   margin-right: 9px;
   font-weight: 800
 }
 
-.course-foot {
+.course-foot,
+.training-foot {
   border-top: 1px solid var(--line);
   padding-top: 16px;
   display: grid;
@@ -692,21 +704,25 @@ textarea {
   color: #75827d
 }
 
-.featured .course-foot {
+.featured .course-foot,
+.featured .training-foot {
   border-color: rgba(255, 255, 255, .1);
   color: #90a39a
 }
 
-.course-foot strong {
+.course-foot strong,
+.training-foot strong {
   font-size: 14px;
   color: var(--ink)
 }
 
-.featured .course-foot strong {
+.featured .course-foot strong,
+.featured .training-foot strong {
   color: #fff
 }
 
-.course-foot a {
+.course-foot a,
+.training-foot a {
   grid-column: 1/-1;
   color: var(--green);
   font-weight: 800
@@ -1544,16 +1560,19 @@ textarea {
     font-size: 43px
   }
 
-  .course-grid {
+  .course-grid,
+  .training-grid {
     grid-template-columns: 1fr
   }
 
   .course-card,
+  .training-card,
   .course-cta-card {
     grid-column: auto
   }
 
-  .course-card {
+  .course-card,
+  .training-card {
     min-height: 340px
   }
 
@@ -1841,4 +1860,233 @@ textarea {
   font-size: 11px;
   text-transform: uppercase;
   letter-spacing: .08em
+}
+
+/* ==========================================================================
+   Founder & Director Section Styles (Amit Jha)
+   ========================================================================== */
+.founder-section {
+  padding: 110px 0;
+  background: #ffffff;
+  position: relative;
+  overflow: hidden;
+}
+
+.founder-grid {
+  display: grid;
+  grid-template-columns: minmax(320px, 460px) 1fr;
+  gap: 60px 80px;
+  align-items: center;
+}
+
+.founder-visual-wrap {
+  position: relative;
+  max-width: 440px;
+  margin: 0 auto;
+}
+
+.founder-offset-bg {
+  position: absolute;
+  top: 24px;
+  left: 24px;
+  right: -24px;
+  bottom: -24px;
+  background: #f4f7f4;
+  border: 1px solid #e1e9e3;
+  border-radius: 16px;
+  background-image: radial-gradient(#d3ded6 1px, transparent 1px);
+  background-size: 14px 14px;
+  z-index: 1;
+}
+
+.founder-img-card {
+  position: relative;
+  z-index: 2;
+  border-radius: 14px;
+  overflow: hidden;
+  box-shadow: 0 25px 60px rgba(12, 23, 19, 0.12);
+  background: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.06);
+}
+
+.founder-img-card img {
+  width: 100%;
+  height: 100%;
+  max-height: 560px;
+  object-fit: cover;
+  object-position: top center;
+  display: block;
+  transition: transform 0.6s cubic-bezier(0.16, 1, 0.3, 1);
+}
+
+.founder-img-card:hover img {
+  transform: scale(1.02);
+}
+
+.founder-badge {
+  position: absolute;
+  left: 24px;
+  bottom: 32px;
+  z-index: 3;
+  background: rgba(255, 255, 255, 0.92);
+  backdrop-filter: blur(14px);
+  -webkit-backdrop-filter: blur(14px);
+  border: 1px solid rgba(255, 255, 255, 0.95);
+  box-shadow: 0 16px 36px rgba(0, 0, 0, 0.12);
+  padding: 20px 30px;
+  border-radius: 12px;
+  display: flex;
+  flex-direction: column;
+  gap: 2px;
+  min-width: 190px;
+}
+
+.founder-badge .badge-num {
+  font-size: 19px;
+  font-weight: 700;
+  color: #1a2822;
+  font-family: var(--font-head);
+  letter-spacing: -0.01em;
+}
+
+.founder-badge .badge-label {
+  font-size: 21px;
+  font-weight: 800;
+  color: #087a46;
+  font-family: var(--font-head);
+  letter-spacing: -0.02em;
+}
+
+.founder-content {
+  position: relative;
+  z-index: 2;
+}
+
+.founder-eyebrow {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 14px;
+  font-weight: 700;
+  color: #087a46;
+  text-transform: uppercase;
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+}
+
+.founder-eyebrow::before {
+  content: "";
+  display: inline-block;
+  width: 28px;
+  height: 2px;
+  background: #087a46;
+}
+
+.founder-title {
+  font-family: var(--font-head);
+  font-size: clamp(30px, 3.8vw, 44px);
+  font-weight: 800;
+  line-height: 1.2;
+  letter-spacing: -0.04em;
+  color: #0c1713;
+  margin: 0 0 22px;
+}
+
+.founder-lead {
+  font-size: 17.5px;
+  font-weight: 600;
+  line-height: 1.65;
+  color: #1a2a22;
+  margin-bottom: 18px;
+}
+
+.founder-text {
+  font-size: 15.5px;
+  line-height: 1.75;
+  color: #4b5d54;
+  margin-bottom: 18px;
+}
+
+.founder-quote {
+  font-size: 15.5px;
+  line-height: 1.7;
+  color: #1a2a22;
+  font-weight: 500;
+  margin-top: 22px;
+  padding-top: 18px;
+  border-top: 1px solid #e3eae5;
+}
+
+.founder-quote strong {
+  color: #087a46;
+  font-weight: 700;
+}
+
+.founder-highlights {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px 24px;
+  margin-top: 24px;
+  padding-top: 16px;
+}
+
+.founder-pill {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 13.5px;
+  font-weight: 600;
+  color: #0c1713;
+  background: #f2f7f4;
+  border: 1px solid #dce8e0;
+  padding: 8px 16px;
+  border-radius: 100px;
+}
+
+.founder-pill span {
+  color: #087a46;
+}
+
+@media (max-width: 980px) {
+  .founder-grid {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+
+  .founder-visual-wrap {
+    max-width: 400px;
+  }
+}
+
+@media (max-width: 580px) {
+  .founder-section {
+    padding: 70px 0;
+  }
+
+  .founder-offset-bg {
+    top: 14px;
+    left: 14px;
+    right: -14px;
+    bottom: -14px;
+  }
+
+  .founder-badge {
+    left: 14px;
+    bottom: 20px;
+    padding: 14px 20px;
+    min-width: 150px;
+  }
+
+  .founder-badge .badge-num {
+    font-size: 16px;
+  }
+
+  .founder-badge .badge-label {
+    font-size: 17px;
+  }
+
+  .founder-highlights {
+    flex-direction: column;
+    gap: 8px;
+  }
 }
