@@ -107,6 +107,7 @@ textarea {
   transition: padding .35s ease, background-color .35s ease, backdrop-filter .35s ease, box-shadow .35s ease;
   width: 100%;
   max-width: 100vw;
+  /* color: #087a46; */
 }
 
 .site-header.scrolled {
@@ -115,6 +116,7 @@ textarea {
   -webkit-backdrop-filter: blur(16px);
   padding: 10px 0;
   box-shadow: 0 10px 30px rgba(0, 0, 0, .12);
+  /* color: #ffffff */
 }
 
 .nav-wrap {
