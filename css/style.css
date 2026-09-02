@@ -143,11 +143,13 @@ textarea {
   color: #dce8e2;
   font-size: 14px;
   font-weight: 600;
+  transition: color .3s ease;
 }
 
 .main-nav>a:not(.nav-cta) {
   position: relative;
   padding: 9px 0;
+  transition: color .3s ease;
 }
 
 .main-nav>a:not(.nav-cta):after {
@@ -173,6 +175,7 @@ textarea {
   background: #fff;
   color: #0b2118;
   white-space: nowrap;
+  transition: background-color .35s ease, color .35s ease, border-color .35s ease, box-shadow .35s ease;
 }
 
 .nav-cta span {
@@ -187,6 +190,48 @@ textarea {
   color: #fff;
   cursor: pointer;
   padding: 0;
+}
+
+/* Light header theme (for pages with light background at top: contact.html & consultation.html) */
+.site-header.header-light:not(.scrolled) .main-nav {
+  color: #0c1713;
+}
+
+.site-header.header-light:not(.scrolled) .main-nav>a:not(.nav-cta) {
+  color: #0c1713;
+}
+
+.site-header.header-light:not(.scrolled) .main-nav>a:not(.nav-cta):hover {
+  color: #087a46;
+}
+
+.site-header.header-light:not(.scrolled) .main-nav>a.active:not(.nav-cta) {
+  color: #087a46;
+}
+
+.site-header.header-light:not(.scrolled) .nav-cta {
+  background: #0c1713;
+  color: #ffffff;
+  border-color: rgba(12, 23, 19, 0.15);
+}
+
+.site-header.header-light:not(.scrolled) .nav-cta span {
+  color: #25b879;
+}
+
+.site-header.header-light:not(.scrolled) .menu-toggle {
+  background: rgba(0, 0, 0, 0.05);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+.site-header.header-light:not(.scrolled) .menu-toggle:hover,
+.site-header.header-light:not(.scrolled) .menu-toggle:focus-visible {
+  background: rgba(0, 0, 0, 0.1);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+.site-header.header-light:not(.scrolled) .menu-toggle span {
+  background: #0c1713;
 }
 
 .hero {
@@ -1339,6 +1384,28 @@ textarea {
   .nav-cta {
     text-align: center;
     margin-top: 6px;
+  }
+
+  .site-header.header-light:not(.scrolled) .main-nav {
+    color: #dce8e2;
+  }
+
+  .site-header.header-light:not(.scrolled) .main-nav>a:not(.nav-cta) {
+    color: #dce8e2;
+  }
+
+  .site-header.header-light:not(.scrolled) .main-nav>a:not(.nav-cta):hover,
+  .site-header.header-light:not(.scrolled) .main-nav>a.active:not(.nav-cta) {
+    color: #35d38e;
+  }
+
+  .site-header.header-light:not(.scrolled) .nav-cta {
+    background: #fff;
+    color: #0b2118;
+  }
+
+  .site-header.header-light:not(.scrolled) .nav-cta span {
+    color: var(--green);
   }
 
   .hero {
