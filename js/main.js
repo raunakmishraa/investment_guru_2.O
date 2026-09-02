@@ -41,46 +41,8 @@ $(function () {
   /* =========================================================
      HOMEPAGE YOUTUBE / PODCAST SECTION
      ========================================================= */
-  if ($('#home').length && !$('#youtube-media').length) {
-    const section = `
-      <section class="youtube-media-section" id="youtube-media">
-        <div class="container">
-          <div class="youtube-section-head" data-aos="fade-up">
-            <div>
-              <div class="eyebrow dark">WATCH • LEARN • DISCOVER</div>
-              <h2>Ideas that help you<br><em>invest smarter.</em></h2>
-            </div>
-            <p>Watch Investment Guru's market analysis and educational videos, or switch to The Amit Show for long-form conversations and podcasts.</p>
-          </div>
-          <div class="youtube-tabs" role="tablist" aria-label="YouTube channels">
-            <button class="youtube-tab active" type="button" role="tab" aria-selected="true" data-youtube-tab="investment"><span class="youtube-tab-icon">▶</span><span><b>Investment Guru</b><small>Market Analysis &amp; Education</small></span></button>
-            <button class="youtube-tab" type="button" role="tab" aria-selected="false" data-youtube-tab="podcast"><span class="youtube-tab-icon">◉</span><span><b>The Amit Show</b><small>Conversations &amp; Podcasts</small></span></button>
-          </div>
-
-          <div class="youtube-panel active" data-youtube-panel="investment" role="tabpanel">
-            <div class="youtube-panel-top"><div><span class="youtube-channel-label">Investment Guru • YouTube</span><h3>Watch our latest market content.</h3></div><a class="youtube-channel-link" href="https://www.youtube.com/@InvestmentGuru_np" target="_blank" rel="noopener">Visit Channel ↗</a></div>
-            <div class="youtube-video-grid">
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed"><iframe src="https://www.youtube-nocookie.com/embed/vZuukseyYnM?rel=0" title="Investment Guru YouTube video" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="youtube-video-meta"><span>INVESTMENT GURU</span><h4>Latest Market Analysis</h4><p>Watch this Investment Guru video directly without leaving the website.</p></div></div>
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed"><iframe src="https://www.youtube-nocookie.com/embed/KnbRdQ-_plE?rel=0" title="Nepse Alpha Full Tutorial by Investment Guru" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="youtube-video-meta"><span>NEPSE SCHOOL</span><h4>Nepse Alpha Full Tutorial</h4><p>Step-by-step educational content for understanding Nepal's stock market tools.</p></div></div>
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed"><iframe src="https://www.youtube-nocookie.com/embed/pHiJKzsShPM?rel=0" title="How to start trading in Nepal Share Market" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="youtube-video-meta"><span>TRADING GUIDE</span><h4>How to Start Trading in Nepal</h4><p>A practical beginner-friendly guide to getting started with share-market trading.</p></div></div>
-            </div>
-          </div>
-
-          <div class="youtube-panel" data-youtube-panel="podcast" role="tabpanel" hidden>
-            <div class="youtube-panel-top"><div><span class="youtube-channel-label">The Amit Show • YouTube</span><h3>Conversations beyond the charts.</h3></div><a class="youtube-channel-link" href="https://www.youtube.com/@InvestmentGuru_np" target="_blank" rel="noopener">Watch The Amit Show ↗</a></div>
-            <div class="youtube-video-grid">
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed"><iframe src="https://www.youtube-nocookie.com/embed/95Qlxoh6dkE?rel=0" title="The Amit Show - Stock Market Secrets" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="youtube-video-meta"><span>THE AMIT SHOW</span><h4>Stock Market Secrets</h4><p>A long-form conversation from The Amit Show, powered by Investment Guru.</p></div></div>
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed"><iframe src="https://www.youtube-nocookie.com/embed/95Qlxoh6dkE?rel=0" title="The Amit Show" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe></div><div class="youtube-video-meta"><span>THE AMIT SHOW</span><h4>Conversations &amp; Perspectives</h4><p>Explore investing, entrepreneurship, careers and personal growth through long-form conversations.</p></div></div>
-              <div class="youtube-video-card youtube-embed-card"><div class="youtube-embed youtube-embed-cta"><div class="channel-mark">AS</div><a href="https://www.youtube.com/@InvestmentGuru_np" target="_blank" rel="noopener" class="play-button">▶</a></div><div class="youtube-video-meta"><span>PODCAST</span><h4>Explore The Amit Show</h4><p>Visit the official Investment Guru channel for more episodes and conversations.</p></div></div>
-            </div>
-          </div>
-        </div>
-      </section>`;
-    const $contact = $('#contact');
-    if ($contact.length) $contact.before(section); else $('main').append(section);
-    $('[data-youtube-tab]').on('click', function () { const key = $(this).data('youtube-tab'); $('[data-youtube-tab]').removeClass('active').attr('aria-selected','false'); $(this).addClass('active').attr('aria-selected','true'); $('[data-youtube-panel]').removeClass('active').attr('hidden',true); $('[data-youtube-panel="'+key+'"]').addClass('active').removeAttr('hidden'); });
-    if (window.AOS) AOS.refresh();
-  }
+  $('[data-youtube-tab]').on('click', function () { const key = $(this).data('youtube-tab'); $('[data-youtube-tab]').removeClass('active').attr('aria-selected','false'); $(this).addClass('active').attr('aria-selected','true'); $('[data-youtube-panel]').removeClass('active').attr('hidden',true); $('[data-youtube-panel="'+key+'"]').addClass('active').removeAttr('hidden'); });
+  if (window.AOS) AOS.refresh();
 
   if (!document.getElementById('youtube-media-styles')) {
     const style = document.createElement('style');
