@@ -89,6 +89,16 @@ $(function () {
     document.head.appendChild(style);
   }
 
+  // Apply the dedicated dark theme after the legacy inline section styles,
+  // so the YouTube/Podcast section stays isolated from the rest of the site.
+  if (!document.getElementById('youtube-dark-theme')) {
+    const darkTheme = document.createElement('link');
+    darkTheme.id = 'youtube-dark-theme';
+    darkTheme.rel = 'stylesheet';
+    darkTheme.href = 'css/youtube-dark.css';
+    document.head.appendChild(darkTheme);
+  }
+
   if (window.gsap) {
     gsap.registerPlugin(ScrollTrigger);
     gsap.from('.hero-grid', { opacity: 0, duration: 1.4, ease: 'power2.out' });
