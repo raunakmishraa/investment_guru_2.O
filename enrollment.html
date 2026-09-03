@@ -40,18 +40,8 @@
                         Choose your<br><em style="font-style:normal;color:#087a46">learning path.</em></h1>
                     <p>Join Investment Guru's expert-led trainings and build practical skills to navigate the stock market
                         with confidence.</p>
-                    <div class="training-grid course-grid" style="grid-template-columns:1fr;margin-top:35px">
-                        <div class="training-card course-card featured" style="grid-column:auto">
-                            <div class="training-tag course-tag">POPULAR</div>
-                            <h3>Stock Market 101</h3>
-                            <p>8 weeks • NRs. 3,000</p>
-                            <ul>
-                                <li>Market fundamentals</li>
-                                <li>Risk assessment</li>
-                                <li>Portfolio basics</li>
-                            </ul>
-                        </div>
-                    </div>
+                    <!-- Dynamic enrollment card — updated when dropdown changes -->
+                    <div id="enrollmentCard"></div>
                 </div>
                 <form class="contact-form" id="enrollForm">
                     <div class="form-title"><span>ENROLL</span>
@@ -64,15 +54,14 @@
                                 placeholder="Your first name"></label><label>Last Name *<input required name="last"
                                 placeholder="Your last name"></label></div><label>Email Address *<input required
                             type="email" name="email" placeholder="your.email@example.com"></label><label>Phone Number
-                        *<input required name="phone" placeholder="+977-9841234567"></label><label>Select Training
-                        *<select required name="training"
+                        *<input required name="phone" placeholder="+977-9841234567"></label>
+                    <label>Select Training *
+                        <select required name="training" id="trainingSelect"
                             style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
-                            <option>Stock Market 101 — NRs. 3,000</option>
-                            <option>Advance Training: Technical Analysis Mastery — NRs. 5,000</option>
-                            <option>Basic to Advance Transformation Program — NRs. 10,000</option>
-                            <option>Pro Trader: Mastering Market Moves — NRs. 12,000</option>
-                            <option>From Loss to Profit: The Recovery Training — NRs. 15,000</option>
-                        </select></label><label style="display:flex;gap:9px;align-items:flex-start"><input required
+                            <!-- Populated by JS from data.js -->
+                        </select>
+                    </label>
+                    <label style="display:flex;gap:9px;align-items:flex-start"><input required
                             type="checkbox" style="width:auto;margin:2px 0"> I agree to the Terms of Service and Privacy
                         Policy and understand the training purchase policy.</label><button
                         class="btn btn-primary full">Enroll Now <span>↗</span></button>
@@ -81,7 +70,23 @@
             </div>
         </section>
     </main>
-    
+
+    <!-- Social Media Presence Section -->
+    <!-- <section class="social-media-section" id="social">
+        <div class="container social-inner">
+            <div class="social-eyebrow">My Presence</div>
+            <h2 class="social-title">My Social Media Presence</h2>
+            <div class="social-grid" id="socialGrid"></div>
+        </div>
+    </section> -->
+
+    <!-- WhatsApp Floating Action Button -->
+    <a href="https://wa.me/9779767473560" class="whatsapp-fab" target="_blank" rel="noopener" aria-label="Chat on WhatsApp">
+        <svg viewBox="0 0 24 24" fill="white" aria-hidden="true">
+            <path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/>
+        </svg>
+    </a>
+
     <footer class="footer">
         <div class="container footer-top">
         <div class="footer-brand"><img src="https://www.investmentguru.com.np/logo.jpg" alt="Investment Guru logo"><p>Because every investor needs a guru.</p></div>
@@ -93,10 +98,8 @@
     </footer>
 
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
+    <script src="js/data.js"></script>
     <script src="js/main.js"></script>
-    <script>
-        $(function () { $('#enrollForm').on('submit', function (e) { e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries()); const subject = 'Training Enrollment - ' + d.training; const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ATraining: ${d.training}`; window.location.href = `mailto:investmentguruofficial@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`; $('#enrollStatus').text('Your email client has been opened with the enrollment request.'); }); });
-    </script>
 </body>
 
 </html>
