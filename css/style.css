@@ -897,6 +897,10 @@ textarea {
   letter-spacing: .1em
 }
 
+.dark-section .eyebrow {
+  color: #5bd09d
+}
+
 .about-copy .eyebrow {
   color: #5bd09d
 }
