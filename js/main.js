@@ -2,7 +2,7 @@ $(function () {
 
 /* =========================================================
       FAQ ACCORDION
-      ========================================================= */
+    ========================================================= */
   $('.faq-question').on('click', function () {
     const $item = $(this).closest('.faq-item');
     const $answer = $item.find('.faq-answer');
@@ -20,6 +20,7 @@ $(function () {
   const $swpModalOverlay = $('#swpModalOverlay');
   const $swpModalClose = $('#swpModalClose');
   const $detailsBtn = $('.details-btn');
+  const $joinBtn = $('.join-btn');
 
   function openSwpModal() {
     $swpModal.attr('hidden', false).removeAttr('hidden');
@@ -40,6 +41,11 @@ $(function () {
     openSwpModal();
   });
 
+  // $joinBtn.on('click', function (e) {
+  //   // e.preventDefault();
+  //   openIclubModal();
+  // });
+
   $swpModalClose.on('click', closeSwpModal);
   $swpModalOverlay.on('click', function (e) {
     if (e.target === this) closeSwpModal();
@@ -48,6 +54,45 @@ $(function () {
   $(document).on('keydown', function (e) {
     if (e.key === 'Escape' && !$swpModal.hasClass('swp-modal-active')) {
       closeSwpModal();
+    }
+  });
+
+  /* =========================================================
+     IG LEARNING CLUB MODAL
+     ========================================================= */
+  const $iclubModal = $('#iclubModal');
+  const $iclubModalOverlay = $('#iclubModalOverlay');
+  const $iclubModalClose = $('#iclubModalClose');
+
+  function openIclubModal() {
+    $iclubModal.attr('hidden', false).removeAttr('hidden');
+    $iclubModalOverlay.css('display', 'block');
+    setTimeout(() => $iclubModal.addClass('iclub-modal-active'), 50);
+  }
+
+  function closeIclubModal() {
+    $iclubModal.removeClass('iclub-modal-active');
+    setTimeout(() => {
+      $iclubModal.attr('hidden', true);
+      $iclubModalOverlay.css('display', 'none');
+    }, 300);
+  }
+
+  $joinBtn.on('click', function (e) {
+    // e.preventDefault();
+    // Check which card was clicked based on data attribute or just open the modal
+    // For simplicity, we'll always open the ICUB modal
+    openIclubModal();
+  });
+
+  $iclubModalClose.on('click', closeIclubModal);
+  $iclubModalOverlay.on('click', function (e) {
+    if (e.target === this) closeIclubModal();
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && !$iclubModal.hasClass('iclub-modal-active')) {
+      closeIclubModal();
     }
   });
 
