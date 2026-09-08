@@ -1,6 +1,19 @@
 $(function () {
 
   /* =========================================================
+     FAQ ACCORDION
+     ========================================================= */
+  $('.faq-question').on('click', function () {
+    const $item = $(this).closest('.faq-item');
+    const $answer = $item.find('.faq-answer');
+    const $question = $(this);
+
+    $item.toggleClass('active');
+    // $answer.css('max-height', $item.hasClass('active') ? '200px' : 0);
+    $answer.css('padding', $item.hasClass('active') ? '24px 24px 24px' : 0);
+  });
+
+  /* =========================================================
      NAVIGATION & HEADER
      ========================================================= */
   const $header = $('#header');
