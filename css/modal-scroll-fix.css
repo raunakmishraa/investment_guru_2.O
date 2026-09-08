@@ -1,0 +1,47 @@
+/* Modal scroll fix: keeps long modal content scrollable on small screens. */
+.sw p.modal,
+.swp-modal,
+.iclub-modal {
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+}
+
+.swp-modal-content,
+.iclub-modal-content {
+  max-height: min(90dvh, 760px);
+  overflow: hidden;
+  display: flex;
+  flex-direction: column;
+}
+
+.swp-modal-body,
+.iclub-modal-body {
+  min-height: 0;
+  overflow-y: auto;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+  -webkit-overflow-scrolling: touch;
+  touch-action: pan-y;
+}
+
+@media (max-width: 700px) {
+  .swp-modal,
+  .iclub-modal {
+    overflow: hidden;
+    overscroll-behavior: none;
+    touch-action: none;
+  }
+
+  .swp-modal-content,
+  .iclub-modal-content {
+    width: min(92vw, 560px);
+    max-height: calc(100dvh - 32px);
+    margin: 16px auto;
+  }
+
+  .swp-modal-body,
+  .iclub-modal-body {
+    max-height: none;
+    padding-bottom: max(24px, env(safe-area-inset-bottom));
+  }
+}
