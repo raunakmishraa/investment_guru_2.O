@@ -1071,7 +1071,7 @@ textarea {
 }
 
 .service-card a:hover {
-  color: #1d4ed8
+  color: #15803d
 }
 
 .service-card>span {
@@ -1345,7 +1345,7 @@ textarea {
 }
 
 .swp-modal-close:hover {
-  color: #3b82f6
+  color: #22c55e
 }
 
 .swp-modal-body {
@@ -1376,7 +1376,7 @@ textarea {
 
 .swp-modal-body ul li::before {
   content: "✓";
-  color: #3b82f6;
+  color: #22c55e;
   font-weight: 800;
   flex-shrink: 0
 }
@@ -1421,7 +1421,7 @@ textarea {
 }
 
 .swp-promo strong {
-  color: #3b82f6
+  color: #22c55e
 }
 
 @keyframes modalIn {
@@ -1515,7 +1515,7 @@ textarea {
 }
 
 .iclub-modal-close:hover {
-  color: #3b82f6
+  color: #22c55e
 }
 
 .iclub-modal-body {
@@ -1546,7 +1546,7 @@ textarea {
 
 .iclub-modal-body ul li::before {
   content: "✓";
-  color: #3b82f6;
+  color: #22c55e;
   font-weight: 800;
   flex-shrink: 0
 }
@@ -1559,7 +1559,7 @@ textarea {
 }
 
 .iclub-btn-primary {
-  background: #3b82f6;
+  background: #22c55e;
   color: #fff;
   border: none;
   padding: 12px;
@@ -1586,8 +1586,8 @@ textarea {
 }
 
 .iclub-btn-secondary:hover {
-  border-color: #3b82f6;
-  color: #3b82f6
+  border-color: #22c55e;
+  color: #22c55e
 }
 
 @keyframes modalIn {
@@ -2748,7 +2748,7 @@ textarea {
 }
 
 .faq-section .eyebrow {
-  color: #3b82f6
+  color: #22c55e
 }
 
 .faq-grid {
@@ -2792,7 +2792,7 @@ textarea {
 
 .faq-icon {
   flex-shrink: 0;
-  color: #3b82f6
+  color: #22c55e
 }
 
 .faq-answer {
@@ -2815,11 +2815,11 @@ textarea {
 }
 
 .faq-item.active .faq-question {
-  border-bottom-color: #3b82f6
+  border-bottom-color: #22c55e
 }
 
 .faq-item.active .faq-question span {
-  color: #3b82f6
+  color: #22c55e
 }
 
 .faq-item.active .faq-answer {
