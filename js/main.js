@@ -1,16 +1,54 @@
 $(function () {
 
-  /* =========================================================
-     FAQ ACCORDION
-     ========================================================= */
+/* =========================================================
+      FAQ ACCORDION
+      ========================================================= */
   $('.faq-question').on('click', function () {
     const $item = $(this).closest('.faq-item');
     const $answer = $item.find('.faq-answer');
     const $question = $(this);
 
     $item.toggleClass('active');
-    // $answer.css('max-height', $item.hasClass('active') ? '200px' : 0);
+    $answer.css('max-height', $item.hasClass('active') ? '200px' : 0);
     $answer.css('padding', $item.hasClass('active') ? '24px 24px 24px' : 0);
+  });
+
+  /* =========================================================
+     SMART WEALTH PRO MODAL
+     ========================================================= */
+  const $swpModal = $('#swpModal');
+  const $swpModalOverlay = $('#swpModalOverlay');
+  const $swpModalClose = $('#swpModalClose');
+  const $detailsBtn = $('.details-btn');
+
+  function openSwpModal() {
+    $swpModal.attr('hidden', false).removeAttr('hidden');
+    $swpModalOverlay.css('display', 'block');
+    setTimeout(() => $swpModal.addClass('swp-modal-active'), 50);
+  }
+
+  function closeSwpModal() {
+    $swpModal.removeClass('swp-modal-active');
+    setTimeout(() => {
+      $swpModal.attr('hidden', true);
+      $swpModalOverlay.css('display', 'none');
+    }, 300);
+  }
+
+  $detailsBtn.on('click', function (e) {
+    e.preventDefault();
+    openSwpModal();
+  });
+
+  $swpModalClose.on('click', closeSwpModal);
+  $swpModalOverlay.on('click', function (e) {
+    if (e.target === this) closeSwpModal();
+  });
+
+  $(document).on('keydown', function (e) {
+    if (e.key === 'Escape' && !$swpModal.hasClass('swp-modal-active')) {
+      closeSwpModal();
+    }
   });
 
   /* =========================================================
