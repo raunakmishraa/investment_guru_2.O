@@ -25,7 +25,8 @@ $(function () {
   function openSwpModal() {
     $swpModal.attr('hidden', false).removeAttr('hidden');
     $swpModalOverlay.css('display', 'block');
-    setTimeout(() => $swpModal.addClass('swp-modal-active'), 50);
+    document.body.style.overflow = 'hidden';
+    // setTimeout(() => $swpModal.addClass('swp-modal-active'), 50);
   }
 
   function closeSwpModal() {
@@ -33,6 +34,7 @@ $(function () {
     setTimeout(() => {
       $swpModal.attr('hidden', true);
       $swpModalOverlay.css('display', 'none');
+      document.body.style.overflow = '';
     }, 300);
   }
 
@@ -67,7 +69,8 @@ $(function () {
   function openIclubModal() {
     $iclubModal.attr('hidden', false).removeAttr('hidden');
     $iclubModalOverlay.css('display', 'block');
-    setTimeout(() => $iclubModal.addClass('iclub-modal-active'), 50);
+    document.body.style.overflow = 'hidden';
+    // setTimeout(() => $iclubModal.addClass('iclub-modal-active'), 50);
   }
 
   function closeIclubModal() {
@@ -75,6 +78,7 @@ $(function () {
     setTimeout(() => {
       $iclubModal.attr('hidden', true);
       $iclubModalOverlay.css('display', 'none');
+      document.body.style.overflow = '';
     }, 300);
   }
 
