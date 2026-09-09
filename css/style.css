@@ -379,6 +379,26 @@ textarea {
   color: #087a46
 }
 
+.btn-secondary {
+  background: #e2e8e4;
+  color: #087a46;
+  border: 1px solid #d8e0db;
+}
+
+.btn-secondary:hover {
+  background: #d0d8d4;
+}
+
+.btn-outline {
+  background: transparent;
+  color: #087a46;
+  border: 1px solid #d8e0db;
+}
+
+.btn-outline:hover {
+  background: #f5f7f6;
+}
+
 .full {
   width: 100%
 }
@@ -587,6 +607,10 @@ textarea {
   margin: 0
 }
 
+#courseDescription{
+  color: var(--green-2) !important;
+}
+
 .section-head p {
   color: var(--muted);
   font-size: 16px;
@@ -627,6 +651,12 @@ textarea {
   display: grid;
   grid-template-columns: repeat(6, 1fr);
   gap: 18px
+}
+
+.course-detail-grid{
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 20px;
 }
 
 .course-card,
@@ -754,6 +784,40 @@ textarea {
   grid-column: 1/-1;
   color: var(--green);
   font-weight: 800
+}
+
+.course-description-page {
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 60px 20px;
+}
+
+.key-features-section {
+  margin: 40px 0;
+}
+
+.key-features-section h4 {
+  color: #087a46;
+  font-size: 20px;
+  margin-bottom: 20px;
+  padding-bottom: 10px;
+  border-bottom: 2px solid #e2e8e4;
+}
+
+.key-features-list {
+  list-style: none;
+  padding: 0;
+}
+
+.key-features-list li {
+  padding: 10px 0;
+  border-bottom: 1px solid #e2e8e4;
+  font-size: 15px;
+  color: #333;
+}
+
+.key-features-list li:last-child {
+  border-bottom: none;
 }
 
 .course-cta-card {
