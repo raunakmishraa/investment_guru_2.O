@@ -403,12 +403,35 @@ $(function () {
      ========================================================= */
   $("#contactForm").on("submit", function (e) {
     e.preventDefault();
-    const data = Object.fromEntries(new FormData(this).entries());
-    const body = `Name: ${data.name}%0D%0AEmail: ${data.email}%0D%0APhone: ${data.phone || ""}%0D%0A%0D%0A${data.message}`;
-    window.location.href = `mailto:${CONTACT.emailOfficial}?subject=${encodeURIComponent(data.subject)}&body=${body}`;
-    $("#formStatus").text(
-      "Your email client has been opened. Please send the prepared message.",
-    );
+
+    const form = $(this);
+    // Prepare form data
+    const formData = new URLSearchParams();
+    form.serializeArray().forEach(function(item) {
+        formData.append(item.name, item.value);
+    });
+                
+    // Google Apps Script URL for contact form
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbysYTfudKkcK0Atl8EobF_O0pOxxIH7szkeAKJrCLfSp-TWs928BgqPysstHeOGVMjG/exec';
+    // Submit form
+    fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    })
+    .then(() => {
+        console.log(formData.toString());
+        form[0].reset();
+        // setTimeout(() => {
+        // }, 5000);
+    })
+    .catch(() => {
+        // setTimeout(() => {
+        // }, 5000);
+    })
+    .finally(() => {
+        $("#formStatus").text("Your message has been sent successfully.").css('color', 'green');
+    });
   });
 
   /* =========================================================
