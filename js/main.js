@@ -420,7 +420,7 @@ $(function () {
         body: formData
     })
     .then(() => {
-        console.log(formData.toString());
+        // console.log(formData.toString());
         form[0].reset();
         // setTimeout(() => {
         // }, 5000);
