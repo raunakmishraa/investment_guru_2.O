@@ -69,10 +69,10 @@
                     </div>
                     <div class="form-row">
                         <label>First Name *
-                            <input required name="first" placeholder="Your first name">
+                            <input required name="firstName" placeholder="Your first name">
                         </label>
                         <label>Last Name *
-                            <input required name="last" placeholder="Your last name">
+                            <input required name="lastName" placeholder="Your last name">
                         </label>
                     </div>
                     <label>Email Address *
@@ -83,10 +83,10 @@
                     </label>
                     <div class="form-row">
                         <label>Preferred Date *
-                            <input required type="date" name="date">
+                            <input required type="date" name="preferredDate">
                         </label>
                         <label>Preferred Time
-                            <select name="time" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                            <select name="preferredTime" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                                 <option>10:00 AM</option>
                                 <option>12:00 PM</option>
                                 <option>2:00 PM</option>
@@ -96,7 +96,7 @@
                         </label>
                     </div>
                     <label>Consultation Type
-                        <select name="type" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                        <select name="consultationType" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                             <option>Investment Planning</option>
                             <option>General Consultation</option>
                             <option>Course Selection</option>
@@ -108,7 +108,7 @@
                         <textarea name="message" rows="5" placeholder="Tell us about your goals..."></textarea>
                     </label>
                     <label>How did you hear about us?
-                        <select name="referral" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                        <select name="hearAboutUs" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                             <option value="">Select an option</option>
                             <option value="social_media">Social Media</option>
                             <option value="friend_family">Friend/Family</option>
@@ -168,7 +168,7 @@
                 });
                 
                 // Google Apps Script URL for contact form
-                const scriptUrl = 'https://script.google.com/macros/s/AKfycbysYTfudKkcK0Atl8EobF_O0pOxxIH7szkeAKJrCLfSp-TWs928BgqPysstHeOGVMjG/exec';
+                const scriptUrl = 'https://script.google.com/macros/s/AKfycbzspAAiZMeZQydb_bsGsQGYqFiIu2NC133SNibHiaqLbfBvUlFhkOUbTuuccPRgjq6LSQ/exec';
                 
                 // Submit form
                 fetch(scriptUrl, {
@@ -177,15 +177,16 @@
                     body: formData
                 })
                 .then(() => {
+                    console.log(formData.toString());
                     // Show success message
                     // $('#contact-submitting').hide(); // This element is not in the provided HTML, consider removing or adding.
                     // $('#contact-success').show();
                     form[0].reset();
                     
                     // Hide success message after 5 seconds
-                    // setTimeout(() => {
-                    //     $('#contact-success').hide();
-                    // }, 5000);
+                    setTimeout(() => {
+                        // $('#contact-success').hide();
+                    }, 5000);
                 })
                 .catch(() => {
                     // Show error message
@@ -193,9 +194,9 @@
                     // $('#contact-error').show();
                     
                     // Hide error message after 5 seconds
-                    // setTimeout(() => {
-                    //     $('#contact-error').hide();
-                    // }, 5000);
+                    setTimeout(() => {
+                        // $('#contact-error').hide();
+                    }, 5000);
                 })
                 .finally(() => {
                     $('#consultStatus').text('Your consultation request has been submitted. We will contact you soon.').css('color', 'green');
