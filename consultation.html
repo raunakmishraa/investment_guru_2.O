@@ -37,15 +37,19 @@
                 <div class="contact-copy">
                     <div class="eyebrow dark">FREE CONSULTATION</div>
                     <h1 style="font:800 clamp(48px,6vw,78px)/1 var(--font-head);letter-spacing:-.06em;margin:0 0 25px">
-                        Start with a<br><em style="font-style:normal;color:#087a46">conversation.</em></h1>
+                        Start with a<br><em style="font-style:normal;color:#087a46">conversation.</em>
+                    </h1>
                     <p>Take the first step towards your financial success. Book a complimentary consultation with our
-                        expert investment advisors and discover personalized strategies for your goals.</p>
+                        expert investment advisors and discover personalized strategies for your goals.
+                    </p>
                     <div class="process-grid" style="margin-top:35px;grid-template-columns:1fr">
-                        <div class="process-item"><b>01</b>
+                        <div class="process-item">
+                            <b>01</b>
                             <h3 style="margin-top:18px">Personalized Strategy</h3>
                             <p>Tailored investment planning for your goals.</p>
                         </div>
-                        <div class="process-item"><b>02</b>
+                        <div class="process-item">
+                            <b>02</b>
                             <h3 style="margin-top:18px">Expert Guidance</h3>
                             <p>5+ years of investment experience.</p>
                         </div>
@@ -56,34 +60,65 @@
                     </div>
                 </div>
                 <form class="contact-form" id="consultForm">
-                    <div class="form-title"><span>BOOK</span>
+                    <div class="form-title">
+                        <span>BOOK</span>
                         <div>
                             <h3>Schedule your consultation</h3>
                             <p>Fill out the form and we'll contact you.</p>
                         </div>
                     </div>
-                    <div class="form-row"><label>First Name *<input required name="first"
-                                placeholder="Your first name"></label><label>Last Name *<input required name="last"
-                                placeholder="Your last name"></label></div><label>Email Address *<input required
-                            type="email" name="email" placeholder="your.email@example.com"></label><label>Phone Number
-                        *<input required name="phone" placeholder="+977-9841234567"></label>
-                    <div class="form-row"><label>Preferred Date *<input required type="date"
-                                name="date"></label><label>Preferred Time<select name="time"
-                                style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                    <div class="form-row">
+                        <label>First Name *
+                            <input required name="first" placeholder="Your first name">
+                        </label>
+                        <label>Last Name *
+                            <input required name="last" placeholder="Your last name">
+                        </label>
+                    </div>
+                    <label>Email Address *
+                        <input required type="email" name="email" placeholder="your.email@example.com">
+                    </label>
+                    <label>Phone Number *
+                        <input required name="phone" placeholder="+977-9841234567">
+                    </label>
+                    <div class="form-row">
+                        <label>Preferred Date *
+                            <input required type="date" name="date">
+                        </label>
+                        <label>Preferred Time
+                            <select name="time" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                                 <option>10:00 AM</option>
                                 <option>12:00 PM</option>
                                 <option>2:00 PM</option>
                                 <option>4:00 PM</option>
                                 <option>6:00 PM</option>
-                            </select></label></div><label>Consultation Type<select name="type"
-                            style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                            </select>
+                        </label>
+                    </div>
+                    <label>Consultation Type
+                        <select name="type" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                             <option>Investment Planning</option>
-                            <option>Stock Market Guidance</option>
+                            <option>General Consultation</option>
+                            <option>Course Selection</option>
                             <option>Portfolio Strategy</option>
                             <option>Trading Strategy</option>
-                        </select></label><label>Additional Message<textarea name="message" rows="5"
-                            placeholder="Tell us about your goals..."></textarea></label><button
-                        class="btn btn-primary full">Schedule Free Consultation <span>↗</span></button>
+                        </select>
+                    </label>
+                    <label>Additional Message
+                        <textarea name="message" rows="5" placeholder="Tell us about your goals..."></textarea>
+                    </label>
+                    <label>How did you hear about us?
+                        <select name="referral" style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
+                            <option value="">Select an option</option>
+                            <option value="social_media">Social Media</option>
+                            <option value="friend_family">Friend/Family</option>
+                            <option value="google_search">Google Search</option>
+                            <option value="website">Website</option>
+                            <option value="advertisement">Advertisement</option>
+                            <option value="other">Other</option>
+                        </select>
+                    </label>
+                    <button class="btn btn-primary full">Schedule Free Consultation <span>↗</span></button>
                     <p class="form-status" id="consultStatus"></p>
                 </form>
             </div>
@@ -110,7 +145,73 @@
     <script src="https://code.jquery.com/jquery-3.7.1.min.js"></script>
     <script src="js/main.js"></script>
     <script>
-        $(function () { $('#consultForm').on('submit', function (e) { e.preventDefault(); const d = Object.fromEntries(new FormData(this).entries()); const subject = 'Free Consultation Request - ' + d.first + ' ' + d.last; const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ADate: ${d.date}%0D%0ATime: ${d.time}%0D%0AType: ${d.type}%0D%0A%0D%0A${d.message || ''}`; window.location.href = `mailto:investmentguru.np@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`; $('#consultStatus').text('Your email client has been opened with the consultation request.'); }); });
+        $(function () {
+            $('#consultForm').on('submit', function (e) {
+                e.preventDefault();
+
+                const form = $(this);
+                // const submitBtn = form.find('.contact-submit-btn');
+                // const submitText = submitBtn.find('.submit-text');
+                // const submitLoading = submitBtn.find('.submit-loading');
+                
+                // Show loading state
+                // submitBtn.prop('disabled', true);
+                // submitText.hide();
+                // submitLoading.show();
+                // $('#contact-submitting').show(); // This element is not in the provided HTML, consider removing or adding.
+                // $('#contact-success, #contact-error').hide();
+
+                // Prepare form data
+                const formData = new URLSearchParams();
+                form.serializeArray().forEach(function(item) {
+                    formData.append(item.name, item.value);
+                });
+                
+                // Google Apps Script URL for contact form
+                const scriptUrl = 'https://script.google.com/macros/s/AKfycbysYTfudKkcK0Atl8EobF_O0pOxxIH7szkeAKJrCLfSp-TWs928BgqPysstHeOGVMjG/exec';
+                
+                // Submit form
+                fetch(scriptUrl, {
+                    method: 'POST',
+                    mode: 'no-cors',
+                    body: formData
+                })
+                .then(() => {
+                    // Show success message
+                    // $('#contact-submitting').hide(); // This element is not in the provided HTML, consider removing or adding.
+                    // $('#contact-success').show();
+                    form[0].reset();
+                    
+                    // Hide success message after 5 seconds
+                    // setTimeout(() => {
+                    //     $('#contact-success').hide();
+                    // }, 5000);
+                })
+                .catch(() => {
+                    // Show error message
+                    // $('#contact-submitting').hide(); // This element is not in the provided HTML, consider removing or adding.
+                    // $('#contact-error').show();
+                    
+                    // Hide error message after 5 seconds
+                    // setTimeout(() => {
+                    //     $('#contact-error').hide();
+                    // }, 5000);
+                })
+                .finally(() => {
+                    $('#consultStatus').text('Your consultation request has been submitted. We will contact you soon.').css('color', 'green');
+                    // Reset button state
+                    // submitBtn.prop('disabled', false);
+                    // submitText.show();
+                    // submitLoading.hide();
+                });
+                
+                // const d = Object.fromEntries(new FormData(this).entries());
+                // const subject = 'Free Consultation Request - ' + d.first + ' ' + d.last;
+                // const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ADate: ${d.date}%0D%0ATime: ${d.time}%0D%0AType: ${d.type}%0D%0A%0D%0A${d.message || ''}`;
+                // window.location.href = `mailto:investmentguru.np@gmail.com?subject=${encodeURIComponent(subject)}&body=${body}`;
+                
+            });
+        });
     </script>
 </body>
 
