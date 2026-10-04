@@ -439,12 +439,35 @@ $(function () {
      ========================================================= */
   $("#enrollForm").on("submit", function (e) {
     e.preventDefault();
-    const d = Object.fromEntries(new FormData(this).entries());
-    const subject = "Training Enrollment - " + d.training;
-    const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ATraining: ${d.training}`;
-    window.location.href = `mailto:${CONTACT.emailOfficial}?subject=${encodeURIComponent(subject)}&body=${body}`;
-    $("#enrollStatus").text(
-      "Your email client has been opened with the enrollment request.",
-    );
+
+    const form = $(this);
+    // Prepare form data
+    const formData = new URLSearchParams();
+    form.serializeArray().forEach(function(item) {
+        formData.append(item.name, item.value);
+    });
+                
+    // Google Apps Script URL for contact form
+    const scriptUrl = 'https://script.google.com/macros/s/AKfycbyVH8yjgoqr0hsVp0vDC2oid_bVviRdiJo8SmGahoSlFufW2cBDcmriLIuCZP7MB9My/exec';
+    // Submit form
+    fetch(scriptUrl, {
+        method: 'POST',
+        mode: 'no-cors',
+        body: formData
+    })
+    .then(() => {
+        console.log(formData.toString());
+        form[0].reset();
+    })
+    .catch(() => {
+    })
+    .finally(() => {
+        $("#enrollStatus").text("Your enrollment request has been submitted successfully. Please proceed with the next steps.").css('color', 'green');
+    });
+
+    // const d = Object.fromEntries(new FormData(this).entries());
+    // const subject = "Training Enrollment - " + d.training;
+    // const body = `Name: ${d.first} ${d.last}%0D%0AEmail: ${d.email}%0D%0APhone: ${d.phone}%0D%0ATraining: ${d.training}`;
+    // window.location.href = `mailto:${CONTACT.emailOfficial}?subject=${encodeURIComponent(subject)}&body=${body}`;
   });
 });

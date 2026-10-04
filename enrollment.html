@@ -50,21 +50,29 @@
                             <p>One-time payment • Non-refundable after 7 days.</p>
                         </div>
                     </div>
-                    <div class="form-row"><label>First Name *<input required name="first"
-                                placeholder="Your first name"></label><label>Last Name *<input required name="last"
-                                placeholder="Your last name"></label></div><label>Email Address *<input required
-                            type="email" name="email" placeholder="your.email@example.com"></label><label>Phone Number
-                        *<input required name="phone" placeholder="+977-9841234567"></label>
+                    <div class="form-row">
+                        <label>First Name *
+                            <input required name="firstName" placeholder="Your first name">
+                        </label>
+                        <label>Last Name *
+                            <input required name="lastName" placeholder="Your last name">
+                        </label>
+                    </div>
+                    <label>Email Address *
+                        <input required type="email" name="email" placeholder="your.email@example.com">
+                    </label>
+                    <label>Phone Number *
+                        <input required name="phone" placeholder="+977-9841234567"></label>
                     <label>Select Training *
-                        <select required name="training" id="trainingSelect"
+                        <select required name="course" id="trainingSelect"
                             style="display:block;width:100%;border:1px solid #d8e0db;background:#fff;border-radius:10px;padding:13px 14px;margin-top:7px">
                             <!-- Populated by JS from data.js -->
                         </select>
                     </label>
-                    <label style="display:flex;gap:9px;align-items:flex-start"><input required
-                            type="checkbox" style="width:auto;margin:2px 0"> I agree to the Terms of Service and Privacy
-                        Policy and understand the training purchase policy.</label><button
-                        class="btn btn-primary full">Enroll Now <span>↗</span></button>
+                    <label style="display:flex;gap:9px;align-items:flex-start">
+                        <input required type="checkbox" name="agreeTerms" style="width:auto;margin:2px 0"> I agree to the Terms of Service and Privacy Policy and understand the training purchase policy.
+                    </label>
+                    <button class="btn btn-primary full">Enroll Now <span>↗</span></button>
                     <p class="form-status" id="enrollStatus"></p>
                 </form>
             </div>
