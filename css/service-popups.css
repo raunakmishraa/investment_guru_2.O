@@ -1,0 +1,186 @@
+/* Homepage-only service popup and image treatment. */
+.service-icon-image {
+  overflow: hidden;
+  padding: 4px;
+}
+
+.service-icon-image img {
+  display: block;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  border-radius: 10px;
+}
+
+.ig-service-modal {
+  position: fixed;
+  inset: 0;
+  z-index: 1200;
+  display: grid;
+  place-items: center;
+  padding: 20px;
+}
+
+.ig-service-modal[hidden] {
+  display: none;
+}
+
+.ig-service-modal-overlay {
+  position: absolute;
+  inset: 0;
+  background: rgba(4, 13, 9, .78);
+  backdrop-filter: blur(4px);
+}
+
+.ig-service-modal-content {
+  position: relative;
+  z-index: 1;
+  width: min(100%, 560px);
+  max-height: min(88vh, 820px);
+  overflow: auto;
+  overscroll-behavior: contain;
+  background: #fff;
+  border: 1px solid rgba(8, 122, 70, .12);
+  border-radius: 22px;
+  box-shadow: 0 24px 80px rgba(0, 0, 0, .28);
+  animation: igPopupEnter .24s ease both;
+}
+
+.ig-service-modal-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 16px;
+  padding: 20px 24px;
+  border-bottom: 1px solid #e5ebe7;
+}
+
+.ig-service-modal-header h2 {
+  margin: 0;
+  color: #0c1713;
+  font: 800 21px/1.25 var(--font-head, "Manrope", sans-serif);
+}
+
+.ig-service-modal-close {
+  display: grid;
+  place-items: center;
+  flex: 0 0 38px;
+  width: 38px;
+  height: 38px;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: #f0f5f1;
+  color: #26352d;
+  font-size: 27px;
+  line-height: 1;
+  cursor: pointer;
+  transition: background .2s ease, color .2s ease;
+}
+
+.ig-service-modal-close:hover {
+  background: #087a46;
+  color: #fff;
+}
+
+.ig-service-modal-body {
+  padding: 22px 24px 26px;
+}
+
+.journal-cover-image {
+  display: block;
+  width: 100%;
+  max-height: 56vh;
+  object-fit: contain;
+  border-radius: 12px;
+  background: #f5f7f3;
+}
+
+.journal-fee-caption {
+  margin: 18px 0 16px;
+  color: #26352d;
+  font-size: 15px;
+  line-height: 1.55;
+  font-weight: 700;
+}
+
+.ig-service-modal-link {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  min-height: 46px;
+  padding: 12px 18px;
+  border-radius: 999px;
+  background: #087a46;
+  color: #fff;
+  font-size: 13px;
+  font-weight: 800;
+  text-decoration: none;
+  transition: background .2s ease, transform .2s ease;
+}
+
+.ig-service-modal-link:hover {
+  background: #065f38;
+  transform: translateY(-1px);
+}
+
+.ig-home-popup-content {
+  width: min(100%, 760px);
+  padding: 12px;
+  overflow: visible;
+  background: #fff;
+}
+
+.ig-home-popup-close {
+  position: absolute;
+  top: -14px;
+  right: -14px;
+  z-index: 2;
+  box-shadow: 0 4px 18px rgba(0, 0, 0, .22);
+}
+
+.home-announcement-image {
+  display: block;
+  width: 100%;
+  max-height: calc(88vh - 24px);
+  object-fit: contain;
+  border-radius: 12px;
+}
+
+@keyframes igPopupEnter {
+  from { opacity: 0; transform: translateY(12px) scale(.985); }
+  to { opacity: 1; transform: translateY(0) scale(1); }
+}
+
+@media (max-width: 600px) {
+  .ig-service-modal {
+    padding: 14px;
+  }
+
+  .ig-service-modal-content {
+    max-height: 90vh;
+    border-radius: 17px;
+  }
+
+  .ig-service-modal-header {
+    padding: 17px 18px;
+  }
+
+  .ig-service-modal-body {
+    padding: 18px;
+  }
+
+  .ig-home-popup-content {
+    padding: 8px;
+  }
+
+  .ig-home-popup-close {
+    top: -10px;
+    right: -8px;
+  }
+
+  .home-announcement-image {
+    max-height: calc(90vh - 16px);
+  }
+}
