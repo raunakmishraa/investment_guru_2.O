@@ -1,7 +1,7 @@
 /* Prevent the smooth-scroll engine from moving the page when a modal is being scrolled. */
 (function () {
-  const modalSelector = '.swp-modal, .iclub-modal';
-  const bodySelector = '.swp-modal-body, .iclub-modal-body';
+  const modalSelector = '.swp-modal, .iclub-modal, .ig-service-modal';
+  const bodySelector = '.swp-modal-body, .iclub-modal-body, .ig-service-modal-body';
 
   function isOpen(modal) {
     return modal && !modal.hasAttribute('hidden');
