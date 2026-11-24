@@ -129,9 +129,9 @@ const CONTACT = {
 
 /* ─── HERO STATS / COUNTERS ─────────────────────────────────────────────── */
 const STATS = [
-  { count: 5, suffix: "+", label: "Years Experience", delay: 50 },
-  { count: 500, suffix: "+", label: "Happy Clients", delay: 120 },
-  { count: 25, suffix: "%", label: "Portfolio Growth", delay: 190 },
+  { count: 7, suffix: "+", label: "Years Experience", delay: 50 },
+  { count: 1500, suffix: "+", label: "Happy Clients", delay: 120 },
+  { count: 35, suffix: "%", label: "Portfolio Growth", delay: 190 },
 ];
 
 /* ─── SOCIAL MEDIA ──────────────────────────────────────────────────────── */
