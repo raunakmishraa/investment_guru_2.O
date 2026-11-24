@@ -16,6 +16,7 @@
   <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/aos@2.3.4/dist/aos.css">
   <link rel="stylesheet" href="css/style.css">
   <link rel="stylesheet" href="css/modal-scroll-fix.css">
+  <link rel="stylesheet" href="css/service-popups.css">
 </head>
 
 <body>
@@ -140,10 +141,10 @@
             <div class="service-icon">◎</div><span>02</span>
             <h3>Trading Journal</h3>
             <p>Record entries, exits, strategies and results to review your performance and build better trading discipline.</p>
-            <a href="contact.html">Learn More →</a>
+            <a href="#journalModal" class="journal-details-btn">Learn More →</a>
           </article>
           <article class="service-card" data-aos="fade-up" data-aos-delay="120">
-            <div class="service-icon">◌</div><span>03</span>
+            <div class="service-icon service-icon-image"><img src="images/SWPro_logo.jpg" alt="Smart Wealth Pro logo"></div><span>03</span>
             <h3>Smart Wealth Pro</h3>
             <p>Explore the Smart Wealth Pro app for iOS and Android. Use promo code <strong>IG20</strong> when you get started.</p>
             <a class="details-btn">Get Details →</a>
@@ -227,6 +228,31 @@
             <a href="mailto:investmentguru.np@gmail.com" class="iclub-btn-secondary">Contact for Details</a>
           </div>
         </main>
+      </div>
+    </div>
+
+    <!-- Trading Journal Details Modal -->
+    <div class="ig-service-modal" id="journalModal" role="dialog" aria-modal="true" aria-labelledby="journalModalTitle" hidden>
+      <div class="ig-service-modal-overlay" data-modal-close></div>
+      <div class="ig-service-modal-content" role="document">
+        <header class="ig-service-modal-header">
+          <h2 id="journalModalTitle">Trading Journal</h2>
+          <button class="ig-service-modal-close" type="button" aria-label="Close Trading Journal details" data-modal-close>&times;</button>
+        </header>
+        <div class="ig-service-modal-body">
+          <img class="journal-cover-image" src="images/journal_cover.jpg" alt="Trading Journal cover">
+          <p class="journal-fee-caption">Fee: Rs 450 (free delivery all over in nepal included)</p>
+          <a class="ig-service-modal-link" href="https://www.youtube.com/watch?v=TbKTDUHnNfM" target="_blank" rel="noopener noreferrer">Watch the Trading Journal video on YouTube ↗</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Homepage Announcement Popup -->
+    <div class="ig-service-modal ig-home-popup" id="homeAnnouncementModal" role="dialog" aria-modal="true" aria-label="Homepage announcement" hidden>
+      <div class="ig-service-modal-overlay" data-modal-close></div>
+      <div class="ig-service-modal-content ig-home-popup-content" role="document">
+        <button class="ig-service-modal-close ig-home-popup-close" type="button" aria-label="Close announcement" data-modal-close>&times;</button>
+        <img class="home-announcement-image" src="images/popup_1.jpg" alt="Investment Guru announcement">
       </div>
     </div>
 
@@ -624,6 +650,7 @@
   <script src="js/data.js"></script>
   <script src="js/main.js"></script>
   <script src="js/modal-scroll-fix.js"></script>
+  <script src="js/service-popups.js"></script>
 </body>
 
 </html>
